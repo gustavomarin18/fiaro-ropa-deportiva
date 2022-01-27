@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.tienda-borrar {
+  font-size: 85px;
+  color: rgb(238, 143, 130);
+}
+
+
