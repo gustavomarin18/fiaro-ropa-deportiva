@@ -10,6 +10,7 @@ function App() {
       <NavBar/>
        </header>
         <section className='tienda-borrar'>Esta va a ser mi tienda</section>
+    
     </div>
   );
 }
