@@ -8,9 +8,10 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
-import "./styles/NavBar.css";
+import "../styles/NavBar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart,faSignInAlt} from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   return (
@@ -18,7 +19,9 @@ function NavBar() {
       {/*barra de navbar realizada con reactbootstrap -Scrolling- (https://react-bootstrap.github.io/) */}
       <Navbar bg="light" expand="lg" className="p-0">
         <Container className="container-navbar" fluid>
-          <Navbar.Brand href="#">Fiaro</Navbar.Brand>
+          <Navbar.Brand className="logo-navbar" href="#">
+            Fiaro
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -38,11 +41,14 @@ function NavBar() {
                   Calzas cortas
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link   href="#"> <FontAwesomeIcon className="sign-in" icon={faSignInAlt} />Inicio sesion</Nav.Link>
-
               <Nav.Link href="#">
-                <FontAwesomeIcon className="shoping-cart" icon={faShoppingCart} />
+                {" "}
+                <FontAwesomeIcon className="sign-in" icon={faSignInAlt} />
+                Inicio sesion
               </Nav.Link>
+
+              {/* carrito de compras en componente Cartwidget */}
+              <CartWidget />
             </Nav>
             <Form className="d-flex">
               <FormControl

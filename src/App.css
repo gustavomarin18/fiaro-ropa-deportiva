@@ -3,13 +3,17 @@
   color: rgb(238, 143, 130);
   text-align: center;
 }
-.shoping-cart{
-  color: rgb(2, 61, 255);
+.shoping-cart {
+  color: rgb(255, 0, 0);
   font-size: 25px;
-
+}
+.logo-navbar {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+  font-size: 25px !important;
 }
 
-
-
-
- 
+@media (min-width: 992px) {
+  .shoping-cart {
+    color: rgba(2, 61, 255);
+  }
+} ;

@@ -1,16 +1,16 @@
-
-import './App.css';
-import NavBar from './components/NavBar';
+import "./App.css";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import NavBar from "./components/Navbar/NavBar";
 
 function App() {
   return (
     <div className="App">
-
-      <header >
-      <NavBar/>
-       </header>
-        <section className='tienda-borrar'>Esta va a ser mi tienda</section>
-    
+      <header>
+        <NavBar />
+        <ItemListContainer
+          greetings={"Hola soy Gustavo esta es va a ser mi tienda de ropa"}
+        />
+      </header>
     </div>
   );
 }
