@@ -1,0 +1,12 @@
+.count-container {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 2rem;
+  background-color: antiquewhite;
+  width: 180px;
+  height: 180px;
+}
+
+.count {
+  font-size: 65px;
+}

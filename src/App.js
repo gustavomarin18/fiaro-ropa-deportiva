@@ -8,7 +8,7 @@ function App() {
       <header>
         <NavBar />
         <ItemListContainer
-          greetings={"Hola soy Gustavo esta es va a ser mi tienda de ropa"}
+          greetings={"Este va a ser el ListContainer "}
         />
       </header>
     </div>
