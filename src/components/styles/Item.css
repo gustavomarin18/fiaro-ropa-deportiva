@@ -1,0 +1,40 @@
+.img-item {
+  display: block;
+  margin: auto;
+
+  padding: 8px;
+  background-color: #f5f5f5;
+  width: 200px;
+  border: 1px solid #999999;
+}
+.img-item IMG {
+  border: 1px solid #000000;
+}
+
+.items {
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 400px;
+  background-color: rgb(243, 222, 219);
+}
+
+.item-title {
+  text-align: center;
+  text-shadow: #f83 -1px 1px, #f83 -2px 2px, #f83 -3px 3px, #f83 -4px 4px,
+    #f83 -5px 5px;
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+}
+.item-description {
+  text-align: center;
+}
+.item-price {
+  text-align: center;
+}
+.item-button {
+  margin: 0 auto !important;
+  display: block !important;
+}
+.item-stock {
+  text-align: center;
+}
