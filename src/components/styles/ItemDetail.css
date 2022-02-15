@@ -1,0 +1,40 @@
+
+
+.container-detail {
+  margin-left: 30%;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 750px;
+  height: 800px;
+ 
+}
+
+.btn-detail {
+  background-color: rgb(10, 237, 253);
+  border-radius: 15px 15px 15px 15px;
+}
+.receipt {
+  margin-left: 10px;
+}
+
+.img-item{
+    height: 40rem;
+    width: 25rem;
+
+}
+.container-text{
+  
+    margin-top: 15rem;
+}
+
+@media screen and (max-width: 950px) {
+    .container-detail{
+        margin-left: 0;
+        justify-content: center;
+    }
+
+   
+
+
+}
