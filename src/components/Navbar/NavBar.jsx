@@ -14,7 +14,8 @@ import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import CartWidget from "./CartWidget";
 import {Link} from "react-router-dom";
 
-function NavBar() {
+
+function NavBar({item}) {
   return (
     <div>
       {/*barra de navbar realizada con reactbootstrap -Scrolling- (https://react-bootstrap.github.io/) */}

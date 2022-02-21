@@ -16,7 +16,7 @@ const Item = ({ item }) => {
         border="0"
       ></img>
       <br></br>
-      <Link to={`Item/${item.id}`} > <Button className="item-button" variant="info">
+      <Link to={`/Item/${item.id}`} > <Button className="item-button" variant="info">
         Ver detalle del producto
       </Button> </Link>
       <p className="item-stock">Stock disponible: {item.stock}</p>
