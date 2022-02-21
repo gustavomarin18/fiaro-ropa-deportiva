@@ -48,7 +48,7 @@ const ItemDetailContainer = () => {
       id: 4,
       title: "Remera",
       name: "Sabah",
-      description: "Remera con capucha termica",
+      description: "Remera termica",
       descriptionDetail: "Tejido: Algodón rústico",
       warranty: "Contra defecto de Fabrica",
       origen: "Hecho en Argentina",
