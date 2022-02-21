@@ -25,7 +25,12 @@
 }
 .container-text{
   
-    margin-top: 15rem;
+    margin-top: 13rem;
+}
+.item-title{
+  text-align: center;
+  color: blue;
+  font-size: 55px;
 }
 
 @media screen and (max-width: 950px) {

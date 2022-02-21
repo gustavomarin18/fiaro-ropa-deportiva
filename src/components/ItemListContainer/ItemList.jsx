@@ -1,7 +1,9 @@
+
 import React from "react";
 import Item from "./Item";
 import { useEffect, useState } from "react";
 import "../styles/ItemList.css";
+import { useParams } from "react-router-dom";
 
 const ItemList = () => {
   const products = [
@@ -13,6 +15,7 @@ const ItemList = () => {
       price: 2580,
       stock: 30,
       pictureUrl: "https://i.ibb.co/5sB9HY8/calza-biker-kenia.jpg",
+      category: "calza",
     },
     {
       id: 2,
@@ -22,6 +25,7 @@ const ItemList = () => {
       price: 2730,
       stock: 20,
       pictureUrl: "https://i.ibb.co/f2Sbnm0/Buzo-Africa.jpg",
+      category: "buzo",
     },
     {
       id: 3,
@@ -31,6 +35,7 @@ const ItemList = () => {
       price: 2100,
       stock: 10,
       pictureUrl: "https://i.ibb.co/YR5rgws/calza-capri-mali.jpg",
+      category: "calza",
     },
     {
       id: 4,
@@ -40,6 +45,7 @@ const ItemList = () => {
       price: 2980,
       stock: 40,
       pictureUrl: "https://i.ibb.co/fMRrzJ5/remera-sabah.jpg",
+      category: "remera",
     },
     {
       id: 5,
@@ -49,10 +55,13 @@ const ItemList = () => {
       price: 1980,
       stock: 6,
       pictureUrl: "https://i.ibb.co/CQxqghS/top-sicilia.jpg",
+      category: "top",
     },
   ];
-
+  const { id } = useParams();
   const [productos, setProductos] = useState([]);
+
+ 
 
   const getData = (data) =>
     new Promise((resolve, reject) => {
@@ -70,20 +79,40 @@ const ItemList = () => {
     });
 
   useEffect(() => {
-    getData(products)
+    getData(products, id)
       .then((res) => setProductos(res))
       .catch((err) => console.log(err));
-  });
+  }, [id]);
 
   return (
     <div className="itemList-design">
-      {productos.length ? (
-        productos.map((producto) => <Item item={producto} key={producto.id} />)
-      ) : (
-        <h1>"Cargando..."</h1>
-      )}
+      {id == undefined
+        ? productos.map((producto) => (
+            <Item item={producto} key={producto.id} />
+          ))
+        : productos
+            .filter((productos) => productos.category == id)
+            .map((productos, index) => (
+              <Item item={productos} key={productos.id} />
+            ))}
     </div>
   );
 };
 
 export default ItemList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

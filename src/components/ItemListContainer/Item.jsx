@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Item.css";
 import { Button,  } from "react-bootstrap";
+import {Link} from "react-router-dom"
 
 const Item = ({ item }) => {
   return (
@@ -15,9 +16,9 @@ const Item = ({ item }) => {
         border="0"
       ></img>
       <br></br>
-      <Button className="item-button" variant="info">
+      <Link to={`Item/${item.id}`} > <Button className="item-button" variant="info">
         Ver detalle del producto
-      </Button>
+      </Button> </Link>
       <p className="item-stock">Stock disponible: {item.stock}</p>
     </div>
   );

@@ -12,6 +12,7 @@ import "../styles/NavBar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import CartWidget from "./CartWidget";
+import {Link} from "react-router-dom";
 
 function NavBar() {
   return (
@@ -19,9 +20,9 @@ function NavBar() {
       {/*barra de navbar realizada con reactbootstrap -Scrolling- (https://react-bootstrap.github.io/) */}
       <Navbar bg="light" expand="lg" className="p-0">
         <Container className="container-navbar" fluid>
-          <Navbar.Brand className="logo-navbar" href="#">
+          <Link to="/"><Navbar.Brand className="logo-navbar" >
             Fiaro
-          </Navbar.Brand>
+          </Navbar.Brand></Link>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -32,14 +33,14 @@ function NavBar() {
               <Nav.Link href="#action1">Nuestra historia</Nav.Link>
               <Nav.Link href="#action2">Contacto</Nav.Link>
               <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Bikers</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">Buzos</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Calzas capri
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Calzas cortas
-                </NavDropdown.Item>
+                
+                
+             
+              <NavDropdown.Item ><Link to="/category/buzo" > Buzos</Link ></NavDropdown.Item>
+              <NavDropdown.Item ><Link to="/category/calza" > Calzas</Link ></NavDropdown.Item>
+              <NavDropdown.Item ><Link to="/category/remera" > Remeras</Link ></NavDropdown.Item>
+              <NavDropdown.Item ><Link to="/category/top" > Top</Link ></NavDropdown.Item>
+              
               </NavDropdown>
               <Nav.Link href="#">
                 {" "}
