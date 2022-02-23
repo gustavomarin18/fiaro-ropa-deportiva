@@ -2,11 +2,20 @@
   margin: 0 auto;
   text-align: center;
   margin-top: 2rem;
-  background-color: antiquewhite;
-  width: 180px;
+ 
+  width: 200px;
   height: 180px;
 }
 
 .count {
   font-size: 65px;
 }
+
+.add-cart{
+  font-size: 20px;
+}
+
+.actual-Count{
+  font-size: 45px;
+}
+

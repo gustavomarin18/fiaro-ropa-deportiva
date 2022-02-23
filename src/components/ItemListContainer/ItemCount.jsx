@@ -1,4 +1,62 @@
-import React from "react";
+import { React, useState } from "react";
+import { Link } from "react-router-dom";
+import "../styles/ItemCount.css";
+
+const ItemCount = ({ stock, initial }) => {
+  const [contador, setContador] = useState(initial);
+  const [first, setFirst] = useState(false);
+
+  const aumentarContador = () => {
+    if (contador < stock) {
+      setContador(contador + 1);
+    }
+  };
+  const restarContador = () => {
+    if (contador > 1) {
+      setContador(contador - 1);
+    }
+  };
+  const onAdd = () => {
+    if (stock > 0) {
+      setFirst(true);
+      setContador(contador);
+    }
+  };
+
+  return (
+    <>
+      {first === false ? (
+        <div className="count-container">
+          <h6 className="actual-Count btn1">{contador}</h6>
+
+          <button className="boton btn3" onClick={restarContador}>
+            -
+          </button>
+          <button className="boton btn4" onClick={onAdd}>
+            Agregar al carrito
+          </button>
+          <button className="boton btn2" onClick={aumentarContador}>
+            +
+          </button>
+        </div>
+      ) : (
+        <div>
+          <h1 className="add-cart">
+            vas a agregar al carrito {contador} producto/s
+          </h1>
+          <Link to="/cart">
+            <button className="finish-buy">Terminar mi compra</button>
+          </Link>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default ItemCount;
+
+{
+  /*import React from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "../styles/ItemCount.css";
@@ -53,4 +111,5 @@ const ItemCount = ({ stock, initial }) => {
   );
 };
 
-export default ItemCount;
+export default ItemCount;*/
+}
