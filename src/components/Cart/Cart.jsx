@@ -33,7 +33,7 @@ const Cart = () => {
         </div>
       ) : (
         <div className="empty">
-        <Link className="linkToProducts" to="/">
+        <Link  to="/">
           <h1>
             No tienes productos seleccionados hace click aqui para empezar a
             comprar
