@@ -1,45 +1,12 @@
+.cardContainer {
+  background-color: #fafafa !important;
+  margin: 0 auto !important;
 
+  margin-top: 25px !important;
 
-.container-detail {
-  margin-left: 30%;
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  width: 750px;
-  height: 800px;
- 
-}
-
-.btn-detail {
-  background-color: rgb(10, 237, 253);
-  border-radius: 15px 15px 15px 15px;
-}
-.receipt {
-  margin-left: 10px;
-}
-
-.img-item{
-    height: 40rem;
-    width: 25rem;
-
-}
-.container-text{
-  
-    margin-top: 13rem;
-}
-.item-title{
-  text-align: center;
-  color: blue;
-  font-size: 55px;
-}
-
-@media screen and (max-width: 950px) {
-    .container-detail{
-        margin-left: 0;
-        justify-content: center;
-    }
-
-   
-
-
+  padding: 1rem !important;
+  border: 2px solid #ccc !important;
+  /* IMPORTANTE */
+  text-align: center !important;
+ background-color: rgb(190, 243, 243) !important;
 }

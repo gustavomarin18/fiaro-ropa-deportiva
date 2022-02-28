@@ -2,13 +2,10 @@ import React from "react";
 import { useEffect, useState, useContext } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import {CarritoContext} from "../../context/CartContext";
-
+import { CarritoContext } from "../../context/CartContext";
 
 const ItemDetailContainer = () => {
-  const {nombre,dameUnaAlerta} = useContext (CarritoContext)
-
-
+  const { nombre, dameUnaAlerta } = useContext(CarritoContext);
 
   const products = [
     {
@@ -112,9 +109,7 @@ const ItemDetailContainer = () => {
           <ItemDetail item={productos} key={productos.id} />
         ))}
 
-        <h1>{nombre}</h1>
-
-  
+      <h1>{nombre}</h1>
     </div>
   );
 };
