@@ -16,21 +16,23 @@ const ItemDetail = ({ item }) => {
 
           <h4>{item.descriptionDetail}</h4>
 
-          <select value="Seleccione un talle">
+          {/*<select value="Seleccione un talle">
             {" "}
             <option>Small</option>
             <option>Medium</option>
             <option>Large</option>
-          </select>
+  </select>*/}
 
           <h3>Precio:{item.price}$ </h3>
+          <h3>Stock:{item.stock}</h3>
+
 
           <br></br>
           <p>
             {item.origen}
             <FontAwesomeIcon className="receipt" icon={faReceipt} />{" "}
           </p>
-          <ItemCount stock={item.stock} initial={1} />
+          <ItemCount item={item} stock={item.stock} initial={1} />
         </div>
       </div>
     </div>
@@ -39,54 +41,3 @@ const ItemDetail = ({ item }) => {
 
 export default ItemDetail;
 
-{
-  /*
-import React from "react";
-import "../styles/ItemDetail.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReceipt } from "@fortawesome/free-solid-svg-icons";
-import ItemCount from "../ItemListContainer/ItemCount"
-
-const ItemDetail = ({ item }) => {
-  
-
-  {console.log(item)}
-  return (
-    <div>
-      <div className="container-detail">
-        <img className="img-item" src={item.pictureUrl} alt="IMG-0061"></img>
-
-        <div className="container-text">
-          <p className="item-title">{item.title}</p>
-          <h1>{item.description}</h1>
-
-          <h4>{item.descriptionDetail}</h4>
-
-          <select value="Seleccione un talle">
-            {" "}
-            <option>Small</option>
-            <option>Medium</option>
-            <option>Large</option>
-  </select>
-
-          <h3>Precio:{item.price}$ </h3>
-          <br></br>
-          <p>
-            {item.origen}
-            <FontAwesomeIcon className="receipt" icon={faReceipt} />{" "}
-          </p>
-          <button className="btn-detail">Agregar al carrito</button>
-        </div>
-      </div>
-
-      <ItemCount stock ={item.stock} initial = {1}/>
-
-      
-
-
-    </div>
-  );
-};
-
-export default ItemDetail;*/
-}

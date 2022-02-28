@@ -1,7 +1,7 @@
 import "./App.css";
 
-import NavBar from "./components/Navbar/NavBar";
-import cartContext from "./context/cartContext";
+
+import CartContext from "./context/CartContext";
 
 import Rutas from "./Routes";
 
@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <header>
-        <cartContext>
+        <CartContext>
           <Rutas />
-        </cartContext>
+        </CartContext>
       </header>
     </div>
   );
