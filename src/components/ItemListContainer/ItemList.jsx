@@ -20,7 +20,7 @@ const ItemList = () => {
 
 
 
-  {/*const products = [
+ const products = [
     {
       id: 1,
       title: "Biker",
@@ -71,13 +71,13 @@ const ItemList = () => {
       pictureUrl: "https://i.ibb.co/CQxqghS/top-sicilia.jpg",
       category: "top",
     },
-  ];*/}
+  ];
   const { id } = useParams();
   const [productos, setProductos] = useState([]);
 
 
 
-  const getData = async () => {
+  {/*const getData = async () => {
     try{const data = collection (db,"items");
     const col = await getDocs (data);
     const result = col.docs.map (
@@ -94,7 +94,7 @@ const ItemList = () => {
   },[]);
 
 
-  console.log (productos)
+console.log (productos)*/}
 
 
 
@@ -114,7 +114,7 @@ const ItemList = () => {
 
  
 
-  {/*const getData = (data) =>
+ const getData = (data) =>
     new Promise((resolve, reject) => {
       setTimeout(
         () => {
@@ -133,8 +133,7 @@ const ItemList = () => {
     getData(products, id)
       .then((res) => setProductos(res))
       .catch((err) => console.log(err));
-  }, [id]);*/}
-
+  }, [id]);
   return (
     
     <div className="itemList-design">
