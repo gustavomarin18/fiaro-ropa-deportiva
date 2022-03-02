@@ -3,11 +3,15 @@ import { useEffect, useState, useContext } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { CarritoContext } from "../../context/CartContext";
+import { collection,getDocs } from "firebase/firestore";
+import db from "../../service/firebase";
 
 const ItemDetailContainer = () => {
-  const { nombre, dameUnaAlerta } = useContext(CarritoContext);
+  const { nombre } = useContext(CarritoContext);
 
-  const products = [
+  
+
+  {/*const products = [
     {
       id: 1,
       title: "Biker",
@@ -73,11 +77,11 @@ const ItemDetailContainer = () => {
       pictureUrl: "https://i.ibb.co/CQxqghS/top-sicilia.jpg",
       pictureUrl2: "https://i.ibb.co/SfgpbKd/calza-biker-kenia.jpg",
     },
-  ];
+  ];*/}
   const { id } = useParams();
   const [productos, setProductos] = useState([]);
 
-  const getData = (data) =>
+  {/*const getData = (data) =>
     new Promise((resolve, reject) => {
       setTimeout(
         () => {
@@ -99,7 +103,44 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   {
-  }
+  }*/}
+
+
+
+
+
+
+  const getData = async () => {
+    try{const data = collection (db,"items");
+    const col = await getDocs (data);
+    const result = col.docs.map (
+      (doc) => (doc = {id: doc.id,...doc.data()})
+    );
+    setProductos (result);
+    } catch (error){
+      console.log (error);
+    }
+  };
+
+  useEffect (() => {
+    getData();
+  },[]);
+
+
+console.log (productos)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <div>
