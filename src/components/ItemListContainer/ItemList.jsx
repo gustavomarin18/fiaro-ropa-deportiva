@@ -1,26 +1,14 @@
-
 import React from "react";
 import Item from "./Item";
 import { useEffect, useState } from "react";
 import "../styles/ItemList.css";
 import { useParams } from "react-router-dom";
-import { collection,getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import db from "../../service/firebase";
 
-
 const ItemList = () => {
-
-
-
-
-
-
-
-
-
-
-
- {/*const products = [
+  {
+    /*const products = [
     {
       id: 1,
       title: "Biker",
@@ -71,50 +59,32 @@ const ItemList = () => {
       pictureUrl: "https://i.ibb.co/CQxqghS/top-sicilia.jpg",
       category: "top",
     },
-  ];*/}
+  ];*/
+  }
   const { id } = useParams();
   const [productos, setProductos] = useState([]);
 
-
-
   const getData = async () => {
-    try{const data = collection (db,"items");
-    const col = await getDocs (data);
-    const result = col.docs.map (
-      (doc) => (doc = {id: doc.id,...doc.data()})
-    );
-    setProductos (result);
-    } catch (error){
-      console.log (error);
+    try {
+      const data = collection(db, "items");
+      const col = await getDocs(data);
+      const result = col.docs.map(
+        (doc) => (doc = { id: doc.id, ...doc.data() })
+      );
+      setProductos(result);
+    } catch (error) {
+      console.log(error);
     }
   };
 
-  useEffect (() => {
+  useEffect(() => {
     getData();
-  },[]);
+  }, []);
 
+  console.log(productos);
 
-console.log (productos)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
- {/*const getData = (data) =>
+  {
+    /*const getData = (data) =>
     new Promise((resolve, reject) => {
       setTimeout(
         () => {
@@ -133,9 +103,9 @@ console.log (productos)
     getData(products, id)
       .then((res) => setProductos(res))
       .catch((err) => console.log(err));
-  }, [id]);*/}
+  }, [id]);*/
+  }
   return (
-    
     <div className="itemList-design">
       {id == undefined
         ? productos.map((producto) => (
@@ -151,19 +121,3 @@ console.log (productos)
 };
 
 export default ItemList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

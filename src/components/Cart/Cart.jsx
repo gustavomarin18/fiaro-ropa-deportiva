@@ -2,6 +2,7 @@ import { React, useContext } from "react";
 import "../styles/Cart.css";
 import { CarritoContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import Checkout from "../Checkout/Checkout";
 
 const Cart = () => {
   const {  deleteAll, carrito, removeItem, cartTotal } =
@@ -22,6 +23,7 @@ const Cart = () => {
 
           <p>{d.price}$</p>
           <button onClick={() => removeItem(d.id)}>borrar</button>
+         
         </div>
       ))}
 
@@ -29,7 +31,10 @@ const Cart = () => {
         <div className="checkout" >
           <button className="checkoutClear" onClick={deleteAll}>Borrar todo</button>
           <h1>El precio total de tus productos es ${cartTotal()}</h1>
-          <button className="checkoutLink">terminar con la compra</button>
+          <div><Checkout carrito={carrito} cartTotal={cartTotal()}/></div>
+
+
+         
         </div>
       ) : (
         <div className="empty">
