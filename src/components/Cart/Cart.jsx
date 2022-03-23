@@ -31,7 +31,7 @@ const Cart = () => {
         <div className="checkout" >
           <button className="checkoutClear" onClick={deleteAll}>Borrar todo</button>
           <h1>El precio total de tus productos es ${cartTotal()}</h1>
-          <div><Checkout carrito={carrito} cartTotal={cartTotal()}/></div>
+          <div className="formCheckout"><Checkout carrito={carrito} cartTotal={cartTotal()}/></div>
 
 
          
