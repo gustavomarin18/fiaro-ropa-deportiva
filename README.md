@@ -5,6 +5,9 @@ Indumentaria deportiva femenina
 Descripción
 E-commerce creado en el curso de React de Coderhouse. Se trata de un sitio de venta de indumentaria deportiva femenina
 
+Demostración de funcionalidades:
+https://youtu.be/6hCsbIBz3Ek
+
 
 Construido con 🛠️
 React - Biblioteca de JavaScript utilizada.
