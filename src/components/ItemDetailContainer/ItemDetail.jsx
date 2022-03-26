@@ -3,72 +3,34 @@ import "../styles/ItemDetail.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReceipt } from "@fortawesome/free-solid-svg-icons";
 import ItemCount from "../ItemListContainer/ItemCount";
-import { Card,Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 const ItemDetail = ({ item }) => {
   return (
+    <>
+      <Card className="cardContainer" style={{ width: "25rem" }}>
+        <Card.Img variant="top" src={item.pictureUrl} />
+        <Card.Body>
+          <Card.Title>{item.title}</Card.Title>
+          <Card.Text>{item.description}</Card.Text>
+          <Card.Text>{item.descriptionDetail}</Card.Text>
+          <Card.Text>Precio:{item.price}$</Card.Text>
 
-<>
-    <Card className="cardContainer" style={{ width: '25rem' }}>
-    <Card.Img variant="top" src={item.pictureUrl} />
-    <Card.Body>
-       <Card.Title>{item.title}</Card.Title>
-    <Card.Text>
-    {item.description}
-    </Card.Text>
-    <Card.Text>
-    {item.descriptionDetail}
-    </Card.Text>
-    <Card.Text>
-    Precio:{item.price}$
-    </Card.Text>
-   
-    <Card.Text>
-    Stock:{item.stock}
-    </Card.Text>
-    {item.origen}
-            <FontAwesomeIcon className="receipt" icon={faReceipt} />
-            <Card.Text>
+          <Card.Text>Stock:{item.stock}</Card.Text>
+          {item.origen}
+          <FontAwesomeIcon className="receipt" icon={faReceipt} />
+          <Card.Text>
             <ItemCount item={item} stock={item.stock} initial={1} />
-
-    </Card.Text>
-   
-    </Card.Body>
-    </Card>
-
-
-
-
-
-
-         
-   
-
-    
-</>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </>
   );
 };
 
 export default ItemDetail;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/*import React from "react";
+{
+  /*import React from "react";
 import "../styles/ItemDetail.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReceipt } from "@fortawesome/free-solid-svg-icons";
@@ -103,6 +65,5 @@ const ItemDetail = ({ item }) => {
   );
 };
 
-export default ItemDetail;*/}
-
-
+export default ItemDetail;*/
+}

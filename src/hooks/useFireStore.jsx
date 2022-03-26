@@ -13,9 +13,11 @@ const useFireStore = () => {
         icon: "success",
         button: "aceptar",
       });
+    
     } catch (error) {
       console.log(error);
     }
+ 
   };
 
   return {

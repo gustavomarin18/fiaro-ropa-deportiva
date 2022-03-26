@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import useFireStore from "../../hooks/useFireStore";
+import { Link } from "react-router-dom";
 
 const Checkout = ({ carrito, cartTotal }) => {
   const [form, setForm] = useState({
@@ -11,7 +12,6 @@ const Checkout = ({ carrito, cartTotal }) => {
     item: carrito,
     total: cartTotal,
   });
-
 
   const { generateOrder } = useFireStore();
 
@@ -28,9 +28,9 @@ const Checkout = ({ carrito, cartTotal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     generateOrder({ datos: form });
+
+    
   };
-
-
 
   return (
     <div>
@@ -71,6 +71,7 @@ const Checkout = ({ carrito, cartTotal }) => {
             class="form-control"
           />
         </div>
+
         <button
           disabled={!form.buyer.name || !form.buyer.phone || !form.buyer.email}
           type="submit"

@@ -14,18 +14,6 @@ const CartContext = ({ children }) => {
     return carrito.some((elemento) => elemento.id === itemId);
   };
 
-  {
-    /*const cartResult = [];
-  carrito.reduce(function (res, value) {
-    if (!res[value.id]) {
-      res[value.id] = { ...value, quanty: 0 };
-      cartResult.push(res[value.id]);
-    }
-    res[value.id].quanty += value.quanty;
-    return res;
-  }, {});*/
-  }
-
   const contarItems = () => {
     if (carrito.length > 0) {
       let acumulador = 0;
