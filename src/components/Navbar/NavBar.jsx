@@ -46,16 +46,16 @@ function NavBar({ item }) {
                   <Link to="/category/top"> Top</Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#">
+              {/*<Nav.Link href="#">
                 {" "}
                 <FontAwesomeIcon className="sign-in" icon={faSignInAlt} />
                 Inicio sesion
-              </Nav.Link>
+  </Nav.Link>*/}
 
               {/* carrito de compras en componente Cartwidget */}
               <CartWidget />
             </Nav>
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
               <FormControl
                 type="search"
                 placeholder="Producto"
@@ -63,7 +63,7 @@ function NavBar({ item }) {
                 aria-label="Search"
               />
               <Button variant="outline-success">Encuentrame</Button>
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
