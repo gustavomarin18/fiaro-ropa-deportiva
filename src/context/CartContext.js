@@ -5,9 +5,25 @@ export const CarritoContext = createContext();
 const CartContext = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
 
+  const [compraFinalizada, setcompraFinalizada] = useState(true);
+
+
+
+
+
+
+
+
+
+
   const agregarAlCarrito = (item, quanty) => {
     const nuevoItem = { ...item, quanty: quanty };
     setCarrito([...carrito, nuevoItem]);
+    setcompraFinalizada(false);
+
+  
+    
+    
   };
 
   const isInCart = (itemId) => {
@@ -47,6 +63,8 @@ const CartContext = ({ children }) => {
         removeItem,
         cartTotal,
         isInCart,
+        compraFinalizada,
+    
       }}
     >
       {children}

@@ -6,7 +6,13 @@ import { CarritoContext } from "../../context/CartContext";
 const ItemCount = ({ stock, initial, item }) => {
   const [contador, setContador] = useState(initial);
 
-  const { agregarAlCarrito, isInCart } = useContext(CarritoContext);
+  
+
+
+
+  
+
+  const { agregarAlCarrito, isInCart,compraFinalizada } = useContext(CarritoContext);
   console.log("desde item count", isInCart(item.id));
 
   const aumentarContador = () => {
@@ -37,18 +43,49 @@ const ItemCount = ({ stock, initial, item }) => {
             vas a agregar al carrito {contador} producto/s
           </h1>
 
-          <Link to="/cart">
+        
+          
             <button
               onClick={() => agregarAlCarrito(item, contador)}
               className="finish-buy"
             >
               Agregar al carrito
             </button>
-          </Link>
+         
+   
+
+
+     
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
       ) : (
         <div>
           <h1>Ya agregastes este articulo al carrito </h1>
+          <Link to="/cart">
+          <button
+          
+          className="finish-buy"
+        >
+          finalizar compra
+        </button>
+        </Link>
+      
+       
+     
         </div>
       )}
     </>

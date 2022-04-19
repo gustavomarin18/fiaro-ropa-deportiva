@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import useFireStore from "../../hooks/useFireStore";
 import { Link } from "react-router-dom";
+import { CarritoContext } from "../../context/CartContext";
 
 const Checkout = ({ carrito, cartTotal }) => {
   const [form, setForm] = useState({
@@ -12,6 +13,7 @@ const Checkout = ({ carrito, cartTotal }) => {
     item: carrito,
     total: cartTotal,
   });
+  const { deleteAll } = useContext(CarritoContext);
 
   const { generateOrder } = useFireStore();
 
@@ -28,8 +30,7 @@ const Checkout = ({ carrito, cartTotal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     generateOrder({ datos: form });
-
-    
+    deleteAll();
   };
 
   return (
